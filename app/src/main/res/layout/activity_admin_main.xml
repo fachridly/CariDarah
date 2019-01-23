@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminMainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp"
+        android:layout_centerInParent="true">
+
+        <ImageButton
+            android:id="@+id/broadcast_button"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:src="@drawable/ic_broadcast_white"
+            android:paddingTop="16dp"
+            android:paddingBottom="32dp"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/broadcast_label"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/broadcast_button"
+            android:clickable="false"
+            android:textAlignment="center"
+            android:paddingBottom="14dp"
+            android:textSize="10sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="Broadcast"/>
+
+        <ImageButton
+            android:id="@+id/donor_button"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_toEndOf="@id/broadcast_button"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_donor_white"
+            android:paddingTop="20dp"
+            android:paddingBottom="36dp"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/donor_label"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/donor_button"
+            android:layout_alignBottom="@id/broadcast_button"
+            android:clickable="false"
+            android:textAlignment="center"
+            android:paddingBottom="14dp"
+            android:textAllCaps="true"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="Data Pendonor"/>
+
+        <ImageButton
+            android:id="@+id/patient_button"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/broadcast_button"
+            android:src="@drawable/ic_patient_white"
+            android:paddingTop="20dp"
+            android:paddingBottom="36dp"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/patient_label"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/patient_button"
+            android:clickable="false"
+            android:textAlignment="center"
+            android:paddingBottom="14dp"
+            android:textAllCaps="true"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="Data Pasien"/>
+
+        <ImageButton
+            android:id="@+id/logout_button"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_toEndOf="@id/patient_button"
+            android:layout_below="@id/donor_button"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_logout_white"
+            android:paddingTop="20dp"
+            android:paddingBottom="36dp"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/logout_label"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/donor_button"
+            android:layout_alignBottom="@id/logout_button"
+            android:clickable="false"
+            android:textAlignment="center"
+            android:paddingBottom="14dp"
+            android:textAllCaps="true"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="Logout"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

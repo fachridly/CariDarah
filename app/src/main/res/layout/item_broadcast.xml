@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:listPreferredItemHeight"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingEnd="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingStart="16dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/info_number_layout"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:background="@drawable/circle_info">
+        <TextView
+            android:id="@+id/info_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            tools:text="100"/>
+        <TextView
+            android:id="@+id/info_amount_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:paddingBottom="2dp"
+            android:layout_alignBottom="@id/info_amount"
+            android:layout_toEndOf="@id/info_amount"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="8sp"
+            android:text="lt"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/info_blood_type"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        tools:text="Golongan Darah A"/>
+
+    <LinearLayout
+        android:id="@+id/info_timestamp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            android:textSize="12sp"
+            tools:text="Mar 6, 2010" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textSize="12sp"
+            tools:text="08:00 PM" />
+
+    </LinearLayout>
+
+</LinearLayout>

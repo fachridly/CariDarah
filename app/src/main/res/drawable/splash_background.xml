@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Pengaturan gambar untuk splash screen-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:gravity="center"
+        android:drawable="@android:color/white" />
+    <item
+        android:height="120dp"
+        android:width="120dp"
+        android:gravity="center"
+        android:drawable="@drawable/logo_bfl">
+        <!--Memasukkan gambar bitmap (logo_bfl.jpg) -->
+        <!--dan memposisikan gambar tersebut untuk ditengah-->
+
+    </item>
+</layer-list>
