@@ -105,7 +105,7 @@ public class LoginActivity extends BaseActivity {
                                     } else {
                                         Log.d(TAG, "sign in failure");
                                         hideProgressDialog();
-                                        Toast.makeText(LoginActivity.this, "Terdapat kesalahan pada koneksi, email, atau password anda.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginActivity.this, "Terdapat kesalahan pada koneksi, email, atau password anda.", Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
