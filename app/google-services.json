@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "31126681019",
+    "firebase_url": "https://caridarah2.firebaseio.com",
+    "project_id": "caridarah2",
+    "storage_bucket": "caridarah2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31126681019:android:56ca3c2aff4c1530",
+        "android_client_info": {
+          "package_name": "com.exmth.caridarah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31126681019-t6f1c834r6ob4io2nnjdpagdm3sn9dc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHYtRcHwwoHgLvzNgZ1CZWHeBUtePNG9o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
