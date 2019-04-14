@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         mInformationButton.setOnClickListener(informationClickListener());
         mNotificationButton.setOnClickListener(notificationClickListener());
 
-        //Test
         // CARA TIMESTAMP
         /*long timestamp = new Date().getTime();
         Date date = new Date(timestamp);
