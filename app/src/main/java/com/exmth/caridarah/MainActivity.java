@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton mProfileButton, mInformationButton, mNotificationButton, mLogoutButton;
@@ -21,6 +25,17 @@ public class MainActivity extends AppCompatActivity {
         mProfileButton.setOnClickListener(profileClickListener());
         mInformationButton.setOnClickListener(informationClickListener());
         mNotificationButton.setOnClickListener(notificationClickListener());
+
+        // CARA TIMESTAMP
+        /*long timestamp = new Date().getTime();
+        Date date = new Date(timestamp);
+
+        String patternDate = "MMM dd, yyyy hh:mm a";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(patternDate);
+
+        String dateFormated = simpleDateFormat.format(date);
+        Toast.makeText(this, dateFormated, Toast.LENGTH_LONG).show();*/
+
     }
 
     private void initializeView() {

@@ -78,17 +78,17 @@ public class LoginActivity extends BaseActivity {
                                         Log.d(TAG, "sign in success");
                                         final FirebaseUser user = mAuth.getCurrentUser();
 
-                                        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("admin");
+                                        DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("user");
                                         database.addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
                                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                 Intent intent = null;
                                                 for (DataSnapshot list : dataSnapshot.getChildren()) {
                                                     if (list.getKey().equals(user.getUid())) {
-                                                        intent = new Intent(LoginActivity.this, AdminMainActivity.class);
+                                                        intent = new Intent(LoginActivity.this, MainActivity.class);
                                                         break;
                                                     } else {
-                                                        intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                        intent = new Intent(LoginActivity.this, AdminMainActivity.class);
                                                     }
                                                 }
                                                 hideProgressDialog();
