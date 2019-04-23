@@ -62,7 +62,8 @@ public class LoginActivity extends BaseActivity {
     }
 
     private View.OnClickListener loginClickListener(){
-        return new View.OnClickListener() {
+        return
+                new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = mEmailEditText.getText().toString();
