@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         /*long timestamp = new Date().getTime();
         Date date = new Date(timestamp);
 
-        String patternDate = "MMM dd, yyyy hh:mm a";
+        String patternDate = "MMMM d, yyyy hh:mm a";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(patternDate);
 
         String dateFormated = simpleDateFormat.format(date);
