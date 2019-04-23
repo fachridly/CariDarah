@@ -6,10 +6,6 @@ public class Donor {
     private String phoneNumber;
     private String timestamp;
 
-    public Donor() {
-
-    }
-
     public Donor(String bloodType, String fullName, String phoneNumber, String timestamp) {
         this.bloodType = bloodType;
         this.fullName = fullName;
