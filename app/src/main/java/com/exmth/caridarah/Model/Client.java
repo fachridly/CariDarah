@@ -17,8 +17,6 @@ public class Client {
     @Exclude
     private String mPassword;
 
-    public Client(){}
-
     public Client(String email, String password, String name, String phone){
         mEmail = email;
         mPassword = password;
