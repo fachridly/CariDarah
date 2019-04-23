@@ -13,7 +13,7 @@ public class AdminMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main);
-        
+
         initializeView();
         mLogoutButton.setOnClickListener(logoutClickListener());
         mBroadcastButton.setOnClickListener(broadcastClickListener());
