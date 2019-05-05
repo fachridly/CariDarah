@@ -3,16 +3,17 @@ package com.exmth.caridarah.Adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.exmth.caridarah.DonorDataActivity;
 import com.exmth.caridarah.Model.Donor;
+import com.exmth.caridarah.PatientDataActivity;
 import com.exmth.caridarah.R;
 import com.exmth.caridarah.Utils.UIHelpers;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import static com.exmth.caridarah.Utils.Constant.DONOR_ADAPTER;
 
@@ -20,14 +21,19 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final String TAG = DataAdapter.class.getSimpleName();
 
     private Context mContext;
-    private List<Donor> mDonorList;
+    private ArrayList<Donor> mDonorList;
     private int mAdapterType;
 
-    public DataAdapter(Context context, List<Donor> donorList, int adapterType) {
+    public DataAdapter(Context context, ArrayList<Donor> donorList, int adapterType) {
         mContext = context;
         mDonorList = donorList;
         mAdapterType = adapterType;
+    }
 
+    public DataAdapter(ArrayList<Donor> mDonorList, DonorDataActivity donorDataActivity) {
+    }
+
+    public DataAdapter(ArrayList<Donor> mDonorList, PatientDataActivity patientDataActivity) {
     }
 
     @NonNull
@@ -50,8 +56,8 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             viewHolder.mBloodTypeTextView.setText(donor.getBloodType());
             viewHolder.mFullNameTextView.setText(donor.getFullName());
             viewHolder.mPhoneNumberTextView.setText(donor.getPhoneNumber());
-            viewHolder.mDateTextView.setText(donor.getTimestamp());
-            viewHolder.mTimeTextView.setText(donor.getTimestamp());
+            viewHolder.mDateTextView.setText(donor.getDate());
+            viewHolder.mTimeTextView.setText(donor.getTime());
         } else {
 
         }

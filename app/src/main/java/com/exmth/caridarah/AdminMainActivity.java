@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class AdminMainActivity extends AppCompatActivity {
     ImageButton mBroadcastButton, mDonorButton, mPatientButton, mLogoutButton;
 
@@ -60,6 +62,7 @@ public class AdminMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminMainActivity.this, LoginActivity.class));
+                FirebaseAuth.getInstance().signOut();
                 finish();
             }
         };

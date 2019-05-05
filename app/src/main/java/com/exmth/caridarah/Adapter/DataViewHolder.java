@@ -1,11 +1,11 @@
 package com.exmth.caridarah.Adapter;
 
-import android.graphics.drawable.GradientDrawable;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.TextView;
+        import android.graphics.drawable.GradientDrawable;
+        import android.support.v7.widget.RecyclerView;
+        import android.view.View;
+        import android.widget.TextView;
 
-import com.exmth.caridarah.R;
+        import com.exmth.caridarah.R;
 
 public class DataViewHolder extends RecyclerView.ViewHolder {
 

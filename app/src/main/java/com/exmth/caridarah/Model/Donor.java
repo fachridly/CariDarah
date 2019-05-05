@@ -4,13 +4,18 @@ public class Donor {
     private String bloodType;
     private String fullName;
     private String phoneNumber;
-    private String timestamp;
+    private String date;
+    private String time;
 
-    public Donor(String bloodType, String fullName, String phoneNumber, String timestamp) {
+    public Donor(){
+    }
+
+    public Donor(String bloodType, String fullName, String phoneNumber, String date, String time) {
         this.bloodType = bloodType;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
-        this.timestamp = timestamp;
+        this.date = date;
+        this.time = time;
     }
 
     public String getBloodType() {
@@ -37,11 +42,19 @@ public class Donor {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public String getDate() {
+        return date;
     }
 
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

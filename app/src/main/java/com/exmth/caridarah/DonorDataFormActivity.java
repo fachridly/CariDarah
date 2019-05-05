@@ -1,5 +1,6 @@
 package com.exmth.caridarah;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.exmth.caridarah.Model.Donor;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class DonorDataFormActivity extends BaseActivity {
     private final static String TAG = RegisterActivity.class.getSimpleName();
@@ -57,22 +60,38 @@ public class DonorDataFormActivity extends BaseActivity {
                 String fullName = nameEditText.getText().toString();
                 String phoneNumber = phoneEditText.getText().toString();
 
-                long date = System.currentTimeMillis();
-                SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy h:mm a");
-                String timestamp = sdf.format(date);
+                Calendar calFordDate = Calendar.getInstance();
+                SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+                String date = currentDate.format(calFordDate.getTime());
 
-                final Donor newDonor = new Donor(bloodType, fullName, phoneNumber, timestamp);
+                Calendar calFordTime = Calendar.getInstance();
+                SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm");
+                String time = currentTime.format(calFordDate.getTime());
 
-                final FirebaseUser pendonor = mAuth.getCurrentUser();
+                final Donor newDonor = new Donor(bloodType, fullName, phoneNumber, date, time);
 
-                DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("pendonor");
-                database.child(pendonor.getUid()).setValue(newDonor).addOnCompleteListener(new OnCompleteListener<Void>() {
+                final FirebaseUser donor = mAuth.getCurrentUser();
+
+                DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("donor");
+                database.child(donor.getUid()).setValue(newDonor).addOnCompleteListener
+                        (new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(DonorDataFormActivity.this, DonorDataActivity.class);
+                            Intent intent = new Intent(DonorDataFormActivity.this,
+                                    DonorDataActivity.class);
                             startActivity(intent);
                             finish();
+
+                            Toast.makeText(DonorDataFormActivity.this, "Data berhasil ditambahkan",
+                                    Toast.LENGTH_SHORT).show();
+
+                            showProgressDialog();
+                        } else {
+                            Toast.makeText(DonorDataFormActivity.this,
+                                    "Error Occured while updating your post.", Toast.LENGTH_SHORT).show();
+
+                            showProgressDialog();
                         }
                     }
                 });

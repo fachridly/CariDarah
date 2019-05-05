@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class PatientDataFormActivity extends BaseActivity {
     private final static String TAG = RegisterActivity.class.getSimpleName();
@@ -57,11 +58,15 @@ public class PatientDataFormActivity extends BaseActivity {
                 String fullName = mNameEditText.getText().toString();
                 String phoneNumber = mPhoneEditText.getText().toString();
 
-                long date = System.currentTimeMillis();
-                SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy h:mm a");
-                String timestamp = sdf.format(date);
+                Calendar calFordDate = Calendar.getInstance();
+                SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+                String date = currentDate.format(calFordDate.getTime());
 
-                final Donor newDonor = new Donor(bloodType, fullName, phoneNumber, timestamp);
+                Calendar calFordTime = Calendar.getInstance();
+                SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm");
+                String time = currentTime.format(calFordDate.getTime());
+
+                final Donor newDonor = new Donor(bloodType, fullName, phoneNumber, date, time);
 
                 final FirebaseUser patient = mAuth.getCurrentUser();
 
@@ -78,7 +83,5 @@ public class PatientDataFormActivity extends BaseActivity {
                 });
             }
         };
-
-
     }
 }

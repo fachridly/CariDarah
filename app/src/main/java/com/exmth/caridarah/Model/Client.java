@@ -5,6 +5,9 @@ import com.google.firebase.database.PropertyName;
 
 public class Client {
 
+    public Client(){
+    }
+
     @PropertyName("email")
     private String mEmail;
 
