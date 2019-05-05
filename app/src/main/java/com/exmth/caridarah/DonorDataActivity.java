@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.exmth.caridarah.Adapter.DataAdapter;
 import com.exmth.caridarah.Model.Donor;
+import com.exmth.caridarah.Utils.Constant;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -66,7 +67,7 @@ public class DonorDataActivity extends AppCompatActivity {
     private void DisplayDonorRecyclerView() {
 
         mDonorDatabase = FirebaseDatabase.getInstance().getReference().child("donor");
-        mDonorDatabase.child(mAuth.getUid()).addValueEventListener(new ValueEventListener() {
+        mDonorDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //Inisialisasi ArrayList
@@ -74,13 +75,12 @@ public class DonorDataActivity extends AppCompatActivity {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     //Mapping data pada DataSnapshot ke dalam objek donor
-
                     Donor donor = snapshot.getValue(Donor.class);
-                    Log.d(TAG, "Check donor: " + donor.getFullName());
+                    mDonorList.add(donor);
                 }
 
                 //Inisialisasi Adapter dan data Donor dalam bentuk Array
-                mDonorAdapter = new DataAdapter(mDonorList, DonorDataActivity.this);
+                mDonorAdapter = new DataAdapter(getApplicationContext(), mDonorList, Constant.DONOR_ADAPTER);
 
                 //Memasang Adapter pada RecyclerView
                 mDonorRecyclerView.setAdapter(mDonorAdapter);

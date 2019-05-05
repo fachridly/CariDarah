@@ -30,9 +30,6 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         mAdapterType = adapterType;
     }
 
-    public DataAdapter(ArrayList<Donor> mDonorList, DonorDataActivity donorDataActivity) {
-    }
-
     public DataAdapter(ArrayList<Donor> mDonorList, PatientDataActivity patientDataActivity) {
     }
 

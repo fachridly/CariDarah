@@ -73,7 +73,7 @@ public class DonorDataFormActivity extends BaseActivity {
                 final FirebaseUser donor = mAuth.getCurrentUser();
 
                 DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("donor");
-                database.child(donor.getUid()).setValue(newDonor).addOnCompleteListener
+                database.push().setValue(newDonor).addOnCompleteListener
                         (new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
